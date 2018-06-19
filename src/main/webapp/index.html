@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>helloword</title>
+</head>
+<script type="text/javascript" src="/AppWeb/js/jquery.js"></script>
+<body>
+<p>hello word</p>
+</body>
+<script type="text/javascript">
+
+    $.ajax({
+        type: "post",
+        url: "/AppWeb/hello.do",
+        data: {"mouth": "0"},
+        success: function (data_or) {
+        }
+    });
+    </script>
+</html>
