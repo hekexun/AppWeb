@@ -702,7 +702,7 @@ function doLogin() {
     var userName = $("#user").val();
     var password=$("#pswd").val();
     var user;
-    if(getCookie("username")!=userName)
+    if( $.cookie("username")==userName)
     {
         window.location.href = "/AppWeb/views/index.html";
     }
@@ -716,9 +716,8 @@ function doLogin() {
             success:function(data){
                 user=data;
                 if (user ==2) {
-                    setCookie("userName", userName,7);
+                    $.cookie("userName", userName,{expires:1,Domain:"http://127.0.0.1:8080"});
                     //$.cookie("password", password,{expires:1,Domain:"http://127.0.0.1:8080"});
-                    //alert($.cookie("userName"));
                     window.location.href = "/AppWeb/views/index.html";
                 } else {
                     alert("登陆失败");

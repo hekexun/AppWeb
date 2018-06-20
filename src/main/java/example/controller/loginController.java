@@ -14,11 +14,11 @@ import java.io.PrintWriter;
 public class loginController {
     @RequestMapping(value="/login.do")
     public @ResponseBody
-    String loginVerify(HttpServletRequest request, HttpServletResponse response,String username,String passwd) {
+    String loginVerify(HttpServletRequest request, HttpServletResponse response,String username,String password) {
         System.out.println("123");
         try {
             loginService login= new loginServiceImpl();
-            int state=login.loginCheck(username,passwd);//0用户不存在，1密码错误，2，登录成功
+            int state=login.loginCheck(username,password);//0用户不存在，1密码错误，2，登录成功
             request.setCharacterEncoding("utf-8");
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out=response.getWriter();
