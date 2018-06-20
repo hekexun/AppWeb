@@ -27,17 +27,17 @@
             <div class="clearfix"></div>
             
             <!-- Login -->
-            <form class="box tile animated active" id="box-login">
+            <form class="box tile animated active" action="/AppWeb/login.do" accept-charset="UTF-8" id="box-login">
                 <h2 class="m-t-0 m-b-15">登录</h2>
-                <input type="text" id="user" class="login-control m-b-10" placeholder="用户名">
-                <input type="password" id="pswd" class="login-control" placeholder="密码">
+                <input type="text" id="username" name="username" class="login-control m-b-10" placeholder="用户名">
+                <input type="password" id="password" name="password" class="login-control" placeholder="密码">
                 <div class="checkbox m-b-20">
                     <label>
                         <input type="checkbox" id="remember">
                         记住登录信息
                     </label>
                 </div>
-                <button class="btn btn-sm m-r-5" onclick=" doLogin()">登录</button>
+                <button class="btn btn-sm m-r-5">登录</button>
               </form>
         <!-- Javascript Libraries -->
         <!-- jQuery -->
