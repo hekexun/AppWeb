@@ -2,6 +2,7 @@ package example.controller;
 
 import example.service.loginService;
 import example.service.loginServiceImpl;
+import net.sf.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -19,6 +20,7 @@ public class loginController {
         try {
             loginService login= new loginServiceImpl();
             int state=login.loginCheck(username,password);//0用户不存在，1密码错误，2，登录成功
+            JSONObject jo = new JSONObject();
             request.setCharacterEncoding("utf-8");
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out=response.getWriter();
