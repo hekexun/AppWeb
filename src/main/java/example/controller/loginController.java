@@ -21,10 +21,11 @@ public class loginController {
             loginService login= new loginServiceImpl();
             int state=login.loginCheck(username,password);//0用户不存在，1密码错误，2，登录成功
             JSONObject jo = new JSONObject();
+            jo.put("state",String.valueOf(state));
             request.setCharacterEncoding("utf-8");
             response.setContentType("text/html;charset=utf-8");
             PrintWriter out=response.getWriter();
-            out.print(state);
+            out.print(jo.toString());
             return null;
         } catch (Exception e) {
             // TODO Auto-generated catch block
